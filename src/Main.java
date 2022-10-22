@@ -1,5 +1,9 @@
 import transport.Auto;
+import transport.Bus;
+import transport.Train;
+import transport.Transport;
 
+import javax.swing.plaf.basic.BasicButtonUI;
 import java.security.Key;
 import java.time.LocalDate;
 
@@ -8,39 +12,34 @@ public class Main {
 
         Auto car1 = new Auto("Lada",
                 "Granta",
-                1.7f,
                 "жёлтый",
                 2015,
                 "России",
-                "автоматическая",
-                "седан",
-                "н987хо41",
-                5,
-                "летняя");
-        car1.setKey(new Auto.key(true,false));
-        car1.setInsurance(new Auto.insurance(LocalDate.now(),1254,"125463875"));
-        Auto.information(car1);
+                150, 1.5f,"автоматическая",
+                "минивен",
+                "н937хо61",
+                7,
+                "зимняя" );
+        car1.setKey(new Auto.key(false,true));
+        car1.setInsurance();
+        car1.information();
+        System.out.println();
+
 
         Auto car2 = new Auto("Audi",
                 "A8 50 L TDI quattro",
-                3.0f,
                 "черный", 2020,
                 "Германии",
-                "автоматическая",
-                "универсал",
-                "н887хо46",
-                5,
-                "летняя");
+                202);
         car2.setKey(new Auto.key(false,false));
         car2.setInsurance(new Auto.insurance(LocalDate.now(),1254,"125463875"));
-        Auto.information(car2);
-
+        car2.information();
+        System.out.println();
         Auto car3 = new Auto("BMW",
                 "Z8",
-                3.0f,
                 "черный",
                 2021,
-                "Германии",
+                "Германии",259,3.0f,
                 "автоматическая",
                 "минивен",
                 "н937хо61",
@@ -48,14 +47,14 @@ public class Main {
                 "зимняя");
         car3.setKey(new Auto.key(true,true));
         car3.setInsurance(new Auto.insurance(LocalDate.now(),1254,"125463875"));
-        Auto.information(car3);
-
+        car3.information();
+        System.out.println();
         Auto car4 = new Auto("Kia",
                 null,
-                2.4f,
                 "красный",
                 2018,
-                "Южной Корее",
+                "Южной Корее",180,
+                2.4f,
                 "механическая",
                 "универсал",
                 "н063хо40",
@@ -63,14 +62,13 @@ public class Main {
                 "летняя");
         car4.setKey(new Auto.key(false,true));
         car4.setInsurance(new Auto.insurance(LocalDate.now(),1254,"125463875"));
-        Auto.information(car4);
-
+        car4.information();
+        System.out.println();
         Auto car5 = new Auto("Hyundai",
                 "Avante",
-                0,
                 "оранжевый",
                 2016,
-                "Южной Корее",
+                "Южной Корее",189,0,
                 "автоматическая",
                 "внедорожник",
                 "н987хо41",
@@ -78,7 +76,24 @@ public class Main {
                 "зимняя");
         car5.setKey(new Auto.key(true,false));
         car5.setInsurance(new Auto.insurance(LocalDate.now(),1254,"125463875"));
-        Auto.information(car5);
+        car5.information();
 
+        System.out.println();
+        Train train1 = new Train(
+                "Ласточка", "B-901",null,2011,"Россия", 301, 3500f,0f,"Белоруссий вокзал","Минск-Пассажирский",  11);
+        train1.information();
+        System.out.println();
+        Train train2=new Train("Ласточка","D-125",null,2011,"Россия",270,1700f,0,"Ленинградский вокзал","Ленинград-пассажирский",8);
+        train2.information();
+        System.out.println();
+        Bus bus1=new Bus("Ford","Transit","черный",2018,"USA",150,"маршрутное такси", 25,"р062ое40");
+        bus1.information();
+        System.out.println();
+        Bus bus2=new Bus("ГАЗ","ГАЗель 3221", "желтый",2006,"Россия",130,null,14,"м548на35");
+        bus2.information();
+        System.out.println();
+        Bus bus3=new Bus("ПАЗ","32053","зеленый",2020,"Россия",110,"военный",24,null);
+        bus3.information();
+        System.out.println();
     }
 }

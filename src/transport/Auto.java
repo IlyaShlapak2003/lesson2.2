@@ -2,7 +2,7 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Auto {
+public class Auto extends Transport{
 
     public static class insurance {
         private final LocalDate validity;
@@ -85,21 +85,21 @@ public class Auto {
         }
     }
 
-    private String brand;
-    private String model;
-    private float engineVolume;
-    private String color;
-    private Integer productionYear;
-    private String productionCountry;
-    private String transmission;
-    private String bodyType;
-    private String registrationNumber;
-    private Integer numberOfSeats;
+    private static float engineVolume;
+    private static String transmission;
+    private static String bodyType;
+    private static String registrationNumber;
+    private static Integer numberOfSeats;
     private String rubber;
-    private key key;
-    private insurance insurance;
+    private Integer maxSpeed;
+    private static key key;
+    private static insurance insurance;
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed){
+        super(brand,model,color,productionYear,productionCountry,maxSpeed);
+    }
 
-    public Auto(String brand, String model, float engineVolume, String color, Integer productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key, insurance insurance) {
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume,  String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key, insurance insurance) {
+        super(brand,model,color,productionYear,productionCountry,maxSpeed);
         if (insurance == null) {
             this.insurance = new insurance();
         } else {
@@ -136,40 +136,17 @@ public class Auto {
         } else {
             this.rubber = rubber;
         }
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null) {
-            this.model = "defult";
-        } else {
-            this.model = model;
-        }
+
         if (engineVolume == 0) {
             this.engineVolume = 1.5f;
         } else {
             this.engineVolume = engineVolume;
         }
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (productionYear == null) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
 
     }
 
-    public Auto(String brand, String model, float engineVolume, String color, Integer productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, insurance insurance) {
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, insurance insurance) {
+        super(brand,model,color,productionYear,productionCountry,maxSpeed);
         if (insurance == null) {
             this.insurance = new insurance();
         } else {
@@ -201,40 +178,16 @@ public class Auto {
         } else {
             this.rubber = rubber;
         }
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null) {
-            this.model = "defult";
-        } else {
-            this.model = model;
-        }
         if (engineVolume == 0) {
             this.engineVolume = 1.5f;
         } else {
             this.engineVolume = engineVolume;
         }
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (productionYear == null) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
 
     }
 
-    public Auto(String brand, String model, float engineVolume, String color, Integer productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key) {
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key) {
+        super(brand,model,color,productionYear,productionCountry,maxSpeed);
         if (key == null) {
             this.key = new key();
         } else {
@@ -266,42 +219,16 @@ public class Auto {
         } else {
             this.rubber = rubber;
         }
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null) {
-            this.model = "defult";
-        } else {
-            this.model = model;
-        }
         if (engineVolume == 0) {
             this.engineVolume = 1.5f;
         } else {
             this.engineVolume = engineVolume;
         }
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (productionYear == null) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
 
     }
 
-    public Auto(String brand, String model, float engineVolume, String color, Integer productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber) {
-
-
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber) {
+        super(brand,model,color,productionYear,productionCountry,maxSpeed);
         if (transmission == null) {
             this.transmission = "default";
         } else {
@@ -327,37 +254,11 @@ public class Auto {
         } else {
             this.rubber = rubber;
         }
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null) {
-            this.model = "defult";
-        } else {
-            this.model = model;
-        }
         if (engineVolume == 0) {
             this.engineVolume = 1.5f;
         } else {
             this.engineVolume = engineVolume;
         }
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (productionYear == null) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
-
     }
 
     public void setRubber(String rubber) {
@@ -376,14 +277,6 @@ public class Auto {
         this.transmission = transmission;
     }
 
-    public void setColor(String color) {
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
     public void setEngineVolume(float engineVolume) {
         if (engineVolume == 0) {
             this.engineVolume = 1.5f;
@@ -392,19 +285,15 @@ public class Auto {
         }
     }
 
-    public float getEngineVolume() {
+    public static float getEngineVolume() {
         return engineVolume;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public String getTransmission() {
+    public static String getTransmission() {
         return transmission;
     }
 
-    public String getRegistrationNumber() {
+    public static String getRegistrationNumber() {
         return registrationNumber;
     }
 
@@ -412,34 +301,20 @@ public class Auto {
         return rubber;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public Integer getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
-    public String getBodyType() {
+    public static String getBodyType() {
         return bodyType;
     }
 
-    public Integer getNumberOfSeats() {
+    public static Integer getNumberOfSeats() {
         return numberOfSeats;
     }
 
     public void setKey(Auto.key key) {
         this.key = key;
     }
-
+    public void setInsurance() {
+        this.insurance=new insurance();
+    }
     public void setInsurance(Auto.insurance insurance) {
         this.insurance = insurance;
     }
@@ -466,21 +341,21 @@ public class Auto {
             return true;
         }
     }
-
-    public static void information(Auto auto) {
-        System.out.println(auto.getBrand() + " "
-                + auto.getModel() + ", "
-                + auto.getProductionYear() +
-                " год выпуска, сборка в " + auto.getProductionCountry() +
-                ", " + auto.getColor() + " цвет кузова, объем двигателя - " + auto.getEngineVolume() +
-                ", коробка передач " + auto.getTransmission() +
-                ", тип кузова " + auto.getBodyType() +
-                ", регистрационный номер " + auto.getRegistrationNumber() +
-                ", количество мест " + auto.getNumberOfSeats() +
-                " срок действия страховки " + auto.insurance.getValidity()
-                + ", стоимость " + auto.insurance.getPrice() +
-                ", номер страховки " + auto.insurance.getNumber() +
-                ", удаленный запуск двигателя " + auto.key.getRemoteEngineStart()
-                + ", бесключевой доступ " + auto.key.getKeylessEntry());
+    public static void information() {
+        System.out.println(getBrand() + " "
+                + getModel() + ", "
+                + getProductionYear() +
+                " год выпуска, сборка в " + getProductionCountry() +
+                ", " + getColor() + " цвет кузова, объем двигателя - " + getEngineVolume() +
+                ", коробка передач " + getTransmission() +
+                ", тип кузова " + getBodyType() +
+                ", регистрационный номер " + getRegistrationNumber() +
+                ", количество мест " + getNumberOfSeats() +
+                " срок действия страховки " + insurance.getValidity()
+                + ", стоимость " + insurance.getPrice() +
+                ", номер страховки " + insurance.getNumber() +
+                ", удаленный запуск двигателя " + key.getRemoteEngineStart()
+                + ", бесключевой доступ " + key.getKeylessEntry());
     }
+
 }
