@@ -80,7 +80,7 @@ public class Main {
                 "внедорожник",
                 "н987хо41",
                 7,
-                "зимняя","дизель");
+                "летняя","дизель");
         car5.setKey(new Auto.key(true,false));
         car5.setInsurance(new Auto.insurance(LocalDate.now(),1254,"125463875"));
         car5.information();

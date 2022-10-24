@@ -10,7 +10,7 @@ public class Auto extends Transport{
         private final String number;
 
         public insurance() {
-            this(null, 10000, "123456789");
+            this(null, 10000, "113456789");
         }
 
         public insurance(LocalDate validity, Integer price, String number) {

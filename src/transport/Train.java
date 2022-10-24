@@ -13,8 +13,8 @@ public class Train extends Transport {
 
     @Override
     public void refill() {
-        System.out.println("приехать в депо");
-        System.out.println("заправиться дизельным топливом");
+        System.out.println("Приехать в депо");
+        System.out.println("Заправиться дизельным топливом");
     }
 
     public Train(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float tripPrice, float travelTime, String departureStationName, String finalStopStation, int numberOfWagon) {

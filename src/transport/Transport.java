@@ -85,7 +85,7 @@ public abstract class Transport {
                 + getModel() + ", "
                 + getProductionYear() +
                 " год выпуска, сборка в " + getProductionCountry() +
-                ", " + getColor() + " цвет кузова, максимальная скорость " + getMaxSpeed());
+                ", " + getColor() + " цвет кузова, максимальная скорость " + getMaxSpeed()+".");
 
     }
 

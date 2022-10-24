@@ -20,7 +20,7 @@ public class Bus extends Transport {
     public Bus(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, String appointment, Integer numberOfSeats, String registrationNumber, String fuelType) {
         super(brand, model, color, productionYear, productionCountry, maxSpeed);
         if (appointment == null || appointment.isEmpty() || appointment.isBlank()) {
-            this.appointment = "Неизвестно";
+            this.appointment = "неизвестно";
         } else {
             this.appointment = appointment;
         }
