@@ -11,6 +11,12 @@ public class Train extends Transport {
         super(brand, model, color, productionYear, productionCountry, maxSpeed);
     }
 
+    @Override
+    public void refill() {
+        System.out.println("приехать в депо");
+        System.out.println("заправиться дизельным топливом");
+    }
+
     public Train(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float tripPrice, float travelTime, String departureStationName, String finalStopStation, int numberOfWagon) {
         super(brand, model, color, productionYear, productionCountry, maxSpeed);
         if (tripPrice > 0) {

@@ -1,6 +1,6 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
 
     private static String brand;
     private static String model;
@@ -49,6 +49,7 @@ public class Transport {
             this.color = color;
         }
     }
+    public abstract void refill();
 
     public static Integer getMaxSpeed() {
         return maxSpeed;

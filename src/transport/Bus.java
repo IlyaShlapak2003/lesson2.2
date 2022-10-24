@@ -1,22 +1,28 @@
 package transport;
 
-public class Bus extends Transport{
+public class Bus extends Transport {
     private static String appointment;
     private static Integer numberOfSeats;
     private static String registrationNumber;
+    private static String fuelType;
 
 
-    public Bus(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed) {
+    public Bus(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, String fuelType) {
         super(brand, model, color, productionYear, productionCountry, maxSpeed);
-    }
-
-    public Bus(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed,String appointment,Integer numberOfSeats,String registrationNumber) {
-        super(brand, model, color, productionYear, productionCountry, maxSpeed);
-        if(appointment==null || appointment.isEmpty() || appointment.isBlank()){
-            this.appointment="Неизвестно";
+        if (fuelType.equals("бензин") || fuelType.equals("дизель")) {
+            this.fuelType=fuelType;
         }
         else {
-            this.appointment=appointment;
+            this.fuelType="неизвестно";
+        }
+    }
+
+    public Bus(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, String appointment, Integer numberOfSeats, String registrationNumber, String fuelType) {
+        super(brand, model, color, productionYear, productionCountry, maxSpeed);
+        if (appointment == null || appointment.isEmpty() || appointment.isBlank()) {
+            this.appointment = "Неизвестно";
+        } else {
+            this.appointment = appointment;
         }
         if (registrationNumber == null) {
             this.registrationNumber = "х000хх000";
@@ -28,18 +34,30 @@ public class Bus extends Transport{
         } else {
             this.numberOfSeats = numberOfSeats;
         }
-
+        if (fuelType.equals("бензин") || fuelType.equals("дизель")) {
+            this.fuelType=fuelType;
+        }
+        else {
+            this.fuelType="неизвестно";
+        }
     }
 
     public static String getAppointment() {
         return appointment;
     }
+
+    public static String getFuelType() {
+        return fuelType;
+    }
+
     public static Integer getNumberOfSeats() {
         return numberOfSeats;
     }
+
     public static String getRegistrationNumber() {
         return registrationNumber;
     }
+
     public static void setRegistrationNumber(String registrationNumber) {
         if (registrationNumber == null) {
             Bus.registrationNumber = "х000хх000";
@@ -47,6 +65,7 @@ public class Bus extends Transport{
             Bus.registrationNumber = registrationNumber;
         }
     }
+
     public boolean correctRegistrationNumber() {
         if (registrationNumber.length() != 9) {
             return false;
@@ -61,14 +80,27 @@ public class Bus extends Transport{
             return true;
         }
     }
+    @Override
+    public void refill() {
+        System.out.println("Приехать на заправочную станцию");
+        if (fuelType.equals("дизель")) {
+            System.out.println("Заправиться дизельным топливом.");
+        }
+        else if (fuelType.equals("бензин")){
+            System.out.println("Заправиться бензиновым топливом");
+        }
+        else{
+            System.out.println("Укажите бип топлива(бензин или дизель)");
+        }
 
+    }
     public static void information() {
         System.out.println(getBrand() + " "
                 + getModel() + ", "
                 + getProductionYear() +
                 " год выпуска, сборка в " + getProductionCountry() +
-                ", " + getColor() + " цвет кузова"+
+                ", " + getColor() + " цвет кузова" +
                 ", регистрационный номер " + getRegistrationNumber() +
-                ", количество мест " + getNumberOfSeats()+", назначение "+getAppointment());
+                ", количество мест " + getNumberOfSeats() + ", назначение " + getAppointment());
     }
 }

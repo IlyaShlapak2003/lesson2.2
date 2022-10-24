@@ -94,12 +94,44 @@ public class Auto extends Transport{
     private Integer maxSpeed;
     private static key key;
     private static insurance insurance;
-    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed){
+    private static String fuelType;
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed,String fuelType){
         super(brand,model,color,productionYear,productionCountry,maxSpeed);
+        if (fuelType.equals("бензин") || fuelType.equals("дизель") || fuelType.equals("электричество")) {
+            this.fuelType=fuelType;
+        }
+        else {
+            this.fuelType="неизвестно";
+        }
     }
 
-    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume,  String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key, insurance insurance) {
+    @Override
+    public void refill() {
+        System.out.println("Приехать на заправочную станцию");
+        if (fuelType.equals("дизель")) {
+            System.out.println("Заправиться дизельным топливом.");
+        }
+        else if (fuelType.equals("бензин")){
+            System.out.println("Заправиться бензиновым топливом");
+        }
+        else if (fuelType.equals("электричество")){
+            System.out.println("Поставить автомобиль на зарядку");
+        }
+        else{
+            System.out.println("Укажите бип топлива(бензин, дизель или электричество)");
+        }
+        System.out.println(fuelType);
+
+    }
+
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume,  String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key, insurance insurance,String fuelType) {
         super(brand,model,color,productionYear,productionCountry,maxSpeed);
+        if (fuelType.equals("бензин") || fuelType.equals("дизель") || fuelType.equals("электричество")) {
+            this.fuelType=fuelType;
+        }
+        else {
+            this.fuelType="неизвестно";
+        }
         if (insurance == null) {
             this.insurance = new insurance();
         } else {
@@ -145,8 +177,14 @@ public class Auto extends Transport{
 
     }
 
-    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, insurance insurance) {
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, insurance insurance,String fuelType) {
         super(brand,model,color,productionYear,productionCountry,maxSpeed);
+        if (fuelType.equals("бензин") || fuelType.equals("дизель") || fuelType.equals("электричество")) {
+            this.fuelType=fuelType;
+        }
+        else {
+            this.fuelType="неизвестно";
+        }
         if (insurance == null) {
             this.insurance = new insurance();
         } else {
@@ -186,8 +224,14 @@ public class Auto extends Transport{
 
     }
 
-    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key) {
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber, key key, String fuelType) {
         super(brand,model,color,productionYear,productionCountry,maxSpeed);
+        if (fuelType.equals("бензин") || fuelType.equals("дизель") || fuelType.equals("электричество")) {
+            this.fuelType=fuelType;
+        }
+        else {
+            this.fuelType="неизвестно";
+        }
         if (key == null) {
             this.key = new key();
         } else {
@@ -227,8 +271,14 @@ public class Auto extends Transport{
 
     }
 
-    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber) {
+    public Auto(String brand, String model, String color, Integer productionYear, String productionCountry, Integer maxSpeed, float engineVolume, String transmission, String bodyType, String registrationNumber, Integer numberOfSeats, String rubber,String fuelType) {
         super(brand,model,color,productionYear,productionCountry,maxSpeed);
+        if (fuelType.equals("бензин") || fuelType.equals("дизель") || fuelType.equals("электричество")) {
+            this.fuelType=fuelType;
+        }
+        else {
+            this.fuelType="неизвестно";
+        }
         if (transmission == null) {
             this.transmission = "default";
         } else {
@@ -317,6 +367,10 @@ public class Auto extends Transport{
     }
     public void setInsurance(Auto.insurance insurance) {
         this.insurance = insurance;
+    }
+
+    public static String getFuelType() {
+        return fuelType;
     }
 
     public void changeRubber() {
